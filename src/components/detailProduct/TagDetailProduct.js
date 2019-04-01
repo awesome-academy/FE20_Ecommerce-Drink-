@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
+
 class TagDetailProduct extends Component {
     constructor(props, context) {
         super(props, context);

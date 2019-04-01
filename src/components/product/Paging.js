@@ -9,7 +9,7 @@ class Paging extends Component {
                 <div className="row">
                     <div className="col-lg-2">
                         <Link to="/product"><i className="fas fa-list"></i></Link>
-                        <Link to="/productlist"><i className="fas fa-th-list"></i></Link>
+                        <Link to="/listproduct"><i className="fas fa-th-list"></i></Link>
                     </div>
                     <div className="col-lg-4"></div>
                     <div className="col-lg-6">

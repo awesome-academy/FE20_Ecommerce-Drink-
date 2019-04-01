@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
+import StarRatings from 'react-star-ratings';
 
 class DescriptionProduct extends Component {
-    showRaiting(rating) {
-       var result =[];
-       for(var i = 1; i <= rating ; i++){
-           result.push(<i className="fas fa-star" />);
-       }
-       for (var j = 1;j <= (5-rating) ; j++){
-           result.push(<i className="far fa-star" />);
-       }       
-       return result;
+    changeRating(newRating, name) {
+        this.setState({
+            rating: newRating
+        });
     }
     render() {
-        const rating = this.props.data.rating;
         return (
             <div className="detailproduct__describition">
                 <h2>{this.props.data.name}</h2><img src="./../image/titleleft-dark.png" alt="true" />
                 <h5>{this.props.data.price}<sup>đ</sup></h5>
-                <hr></hr>
-                {this.showRaiting(rating)}
+                <hr />
+                <StarRatings
+                    rating={this.props.data.rating}
+                    changeRating={this.changeRating}
+                    numberOfStars={5}
+                    name='rating'
+                    starDimension="25px"
+                    starSpacing="5px"
+                />
                 <i> 1 Review(S) | Add Your Review</i>
-                <hr></hr>
+                <hr />
                 <h4>Màu sắc</h4><span className="yelow" /><span className="black" /><span className="red" />
                 <h4>kích cỡ</h4>
                 <button className="buttondrop">Loại to    <i className="fas fa-sort-down" /></button>

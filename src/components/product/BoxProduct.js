@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { onAddToCart } from '../../actions/index';
+import { onAddToCart, getDetail } from '../../actions/index';
+import {  Link } from 'react-router-dom';
+
 class BoxProduct extends Component {
     constructor(props) {
         super(props);
@@ -8,14 +10,17 @@ class BoxProduct extends Component {
             idproduct: this.props.data && this.props.data.id ? this.props.data.id : '',
             name: this.props.data && this.props.data.name ? this.props.data.name : '',
             price: this.props.data && this.props.data.price ? this.props.data.price : 0,
+            oldprice: this.props.data && this.props.data.oldprice ? this.props.data.oldprice : 0,
             urlImage: this.props.data && this.props.data.urlImage ? this.props.data.urlImage : '',
-            quantity: 1
+            quantity: 1,
+            status: false
         }
     }
+
     onSubmit() {
         alert('Add to cart successfully');
         this.props.onAddToCart(this.state);
-       
+
     }
     render() {
         return (
@@ -29,8 +34,8 @@ class BoxProduct extends Component {
                         </div>
                     </div>
                     <div className="product__card__infor">
-                        <h3>
-                            {this.props.data.name}
+                        <h3 >
+                            <Link to={"/product/" + this.props.data.id}>{this.props.data.name}</Link>
                         </h3>
                         <h5>{this.props.data.price}<sup>đ
                         <del>- {this.props.data.oldprice}<sup>đ</sup></del></sup></h5>
@@ -46,4 +51,4 @@ const mapStateToProps = state => {
         product: state.product,
     };
 };
-export default connect(mapStateToProps, { onAddToCart })(BoxProduct);
+export default connect(mapStateToProps, { onAddToCart, getDetail })(BoxProduct);
