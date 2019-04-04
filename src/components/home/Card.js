@@ -33,6 +33,8 @@ class Card extends Component {
                                 className="button"
                             >Add to cart</button>
                         </Link>
+                        <del>- {this.props.data.oldprice}<sup>đ</sup></del></sup></h5>
+                        <button className="button">add to cart</button>
                     </div>
                 </div>
             </div>

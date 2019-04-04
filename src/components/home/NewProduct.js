@@ -8,6 +8,9 @@ class NewProduct extends Component {
         this.props.getListAll()
     }
     render() {
+        let newProduct = this.props.data.slice(0, 4).map(data => (
+            <Card key={data.id} data={data} />
+        ));
         return (
             <div className="newproduct" id="newproduct">
                 <div className="container">
@@ -20,6 +23,7 @@ class NewProduct extends Component {
                                 <Card key={data.id} data={data} />
                             ))
                         }
+                        {newProduct}
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-
 class ItemHotProduct extends Component {
     render() {
         return (
@@ -23,6 +22,7 @@ class ItemHotProduct extends Component {
                                 className="button"
                             >Add to cart</button>
                         </Link>
+                        <button className="button">add to cart </button>
                     </div>
                 </div>
             </div>

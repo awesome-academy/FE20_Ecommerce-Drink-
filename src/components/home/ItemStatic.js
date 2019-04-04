@@ -10,6 +10,12 @@ class ItemStatic extends Component {
                     <div className="staticblock__box__describition__hover">
                         <div className="overload">
                             <h1>rượu</h1>
+                <div className="staticblock__box__img"><img src={this.props.data.src} alt="staticblock" /></div>
+                <div className="staticblock__box__describition">
+                    <p>{this.props.data.yearn}</p>
+                    <div className="staticblock__box__describition__hover">
+                        <div className="overload">
+                            <h1>{this.props.data.name}</h1>
                         </div>
                     </div>
                 </div>
