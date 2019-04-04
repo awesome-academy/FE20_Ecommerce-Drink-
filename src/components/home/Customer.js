@@ -11,7 +11,8 @@ class Customer extends Component {
                         Vang nổ Thang Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ
                         rượu nhẹ, bột ga đầy trắng mịn.
                         Van nổ Thăng Long ...
-                </p>
+                    </p>
+                    </p>
                     <a href="/">Read more</a>
                     <div className="customer__card">
                         <div className="customer__card__img"><img src="./../image/avatar_1.png" alt="avatar" /></div>

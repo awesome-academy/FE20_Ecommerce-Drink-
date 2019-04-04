@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Mega_menu from './Mega_menu';
 
 class Menu extends Component {
     render() {
@@ -59,6 +60,7 @@ class Menu extends Component {
                                             </div>
                                             <div className="mega__img"><img src="./../image/mega.png" alt="" /></div>
                                         </div>
+                                      <Mega_menu />
                                     </li>
                                     <li><Link to="/product">Product</Link></li>
                                     <li><Link to="/product">Champagne</Link></li>
