@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 class ItemHotProduct extends Component {
     render() {
         return (
@@ -10,6 +10,18 @@ class ItemHotProduct extends Component {
                         <h3>{this.props.data.name}</h3>
                         <h5>{this.props.data.price}<sup>đ
                         <del>- {this.props.data.oldprice}<sup>đ</sup></del></sup></h5>
+                        <Link
+                            to={{
+                                pathname: "/detailproduct",
+                                search: "?product",
+                                hash: `${this.props.data.id}`,
+                                state: { fromDashboard: true }
+                            }}
+                        >
+                            <button
+                                className="button"
+                            >Add to cart</button>
+                        </Link>
                         <button className="button">add to cart </button>
                     </div>
                 </div>

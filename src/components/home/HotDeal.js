@@ -23,7 +23,8 @@ class HotDeal extends Component {
                                         <p>
                                             Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ.
                                             Resveratro còn có khả năng ngăn chặn mật độ oxy hóa của protein béo.
-                                         </p>
+                                        </p>
+                                        </p>
                                         <div className="hotdeal__banner__box__infor__table">
                                             <div className="hotdeal__banner__box__infor__table--item">
                                                 <h4>334</h4>

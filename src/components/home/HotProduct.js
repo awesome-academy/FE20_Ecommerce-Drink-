@@ -18,6 +18,11 @@ class HotProduct extends Component {
                         <h1 className="title">Sản phẩm bán chạy</h1><img src="image/title_dark.png" alt="title_dark" />
                     </div>
                     <div className="row">
+                        {
+                            this.props.data.slice(0, 4).map(data => (
+                                <ItemHotProduct key={data.id} data={data} />
+                            ))
+                        }
                         {hotProduct}
                     </div>
                 </div>

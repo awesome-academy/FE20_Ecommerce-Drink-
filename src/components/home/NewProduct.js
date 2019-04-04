@@ -18,6 +18,11 @@ class NewProduct extends Component {
                         <h1 className="title">Sản phẩm mới</h1><img src="./../image/title_dark.png" alt="title_dark" />
                     </div>
                     <div className="row">
+                        {
+                            this.props.data.slice(0, 4).map(data => (
+                                <Card key={data.id} data={data} />
+                            ))
+                        }
                         {newProduct}
                     </div>
                 </div>
