@@ -6,6 +6,7 @@ import Paging from './Paging';
 import ItemListProduct from './ItemListProduct';
 import { connect } from 'react-redux';
 import { getListAll } from '../../actions/index';
+import { Header, Footer } from '../layout';
 
 class ListProduct extends Component {
     componentDidMount() {
@@ -14,6 +15,7 @@ class ListProduct extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <Menu />
                 <div className="product" id="product">
                     <div className="container">
@@ -38,6 +40,7 @@ class ListProduct extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }

@@ -6,24 +6,17 @@ import DescriptionProduct from './DescriptionProduct';
 import TagDetailProduct from './TagDetailProduct';
 import HotProduct from '../home/HotProduct';
 import { connect } from 'react-redux';
-import { getListAll } from '../../actions/index';
+import { getDetail } from '../../actions/index';
+import { Header, Footer } from '../layout';
 
 class DetailProduct extends Component {
     componentDidMount() {
-        this.props.getListAll()
+        this.props.getDetail(this.props.match.params.id);
     }
     render() {
-        let ImageProducts = this.props.data.slice(0, 1).map(data => (
-            <ImageProduct key={data.id} data={data} />
-        ));
-        let DescriptionProducts = this.props.data.slice(0, 1).map(data => (
-            <DescriptionProduct key={data.id} data={data} />
-        ));
-        let TagDetailProducts = this.props.data.slice(0, 1).map(data => (
-            <TagDetailProduct key={data.id} data={data} />
-        ));
         return (
             <div>
+                <Header />
                 <Menu />
                 <div className="detailproduct" id="detailproduct">
                     <div className="container">
@@ -33,25 +26,27 @@ class DetailProduct extends Component {
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
-                                {ImageProducts}
+                                <ImageProduct data={this.props.data} />
                             </div>
                             <div className="col-lg-6">
-                                {DescriptionProducts}
+                                <DescriptionProduct data={this.props.data} />
+
                             </div>
                         </div>
                         <div className="detailproduct__infor">
-                            {TagDetailProducts}
+                            <TagDetailProduct data={this.props.data} />
                         </div>
                         <HotProduct />
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }
 }
 const mapStateToProps = (state) => {
     return {
-        data: state.product.all,
+        data: state.product.del,
     }
 }
-export default connect(mapStateToProps, { getListAll })(DetailProduct);
+export default connect(mapStateToProps, { getDetail })(DetailProduct);

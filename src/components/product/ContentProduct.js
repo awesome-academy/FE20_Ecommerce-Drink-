@@ -11,7 +11,7 @@ class ContentProduct extends Component {
         this.props.getListAll()
     }
     render() {
-        let itemProduct = this.props.data.slice(0,9).map(data => (
+        const itemProduct = this.props.data.slice(0,9).map(data => (
             <BoxProduct key={data.id} data={data} />
         ));
         return (
